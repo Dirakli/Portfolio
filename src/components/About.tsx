@@ -11,36 +11,36 @@ function About() {
       <EducationWrapper>
         <MiniWrapper>
           <University>Bachelor in Faculty of Economics and Business</University>
-          <Button>Full Time</Button>
+          <Button style={{marginLeft: "280px"}} >Full Time</Button>
         </MiniWrapper>
         <Universities>
           <img src={UniversityImage} alt="building image" />
           <UniversityName>IVANE JAVAKHISHVILI TBILISI STATE UNIVERSITY</UniversityName>
-          <Duration style={{ marginLeft: "240px" }} >SEP 2014 - AUG 2018</Duration>
+          <Duration style={{ marginLeft: "400px" }} >SEP 2014 - AUG 2018</Duration>
         </Universities>
         <Line></Line>
       </EducationWrapper>
       <EducationWrapper>
         <MiniWrapper>
           <University>Master in Business Administration and Modern Technologies</University>
-          <Button>Full Time</Button>
+          <Button style={{marginLeft: "133px"}}  >Full Time</Button>
         </MiniWrapper>
         <Universities>
           <img src={UniversityImage} alt="building image" />
           <UniversityName>BUSINESS AND TECHNOLOGY UNIVERSITY</UniversityName>
-          <Duration>SEP 2020 - AUG 2022</Duration>
+          <Duration style={{ marginLeft: "445px" }} >SEP 2020 - AUG 2022</Duration>
         </Universities>
         <Line></Line>
       </EducationWrapper>
       <EducationWrapper>
         <MiniWrapper>
           <University>Certificate on Achievement in FRONT-END COURSE</University>
-          <Button>Full Time</Button>
+          <Button style={{marginLeft: "240px"}}  >Full Time</Button>
         </MiniWrapper>
         <Universities>
           <img src={UniversityImage} alt="building image" />
           <UniversityName>ACADEMY OF DIGITAL INDUSTRIES</UniversityName>
-          <Duration style={{marginLeft: "325px"}} >OCT 2021 - APR 2022</Duration>
+          <Duration style={{marginLeft: "485px"}} >OCT 2021 - APR 2022</Duration>
         </Universities>
         <Line></Line>
       </EducationWrapper>
@@ -89,7 +89,6 @@ const MiniWrapper = styled.div`
 const Button = styled.button`
   width: 84px;
   height: 24px;
-  margin-left: 130px;
   border-radius: 100px;
   background-color: #D7FFE0;
   color: #018C0F;
@@ -146,7 +145,7 @@ const AboutText = styled.h1`
 `
 
 const MainWrapper = styled.div`
-  width: 710px;
+  width: 1123.45px;
   height: 100vh;
   display: flex;
   background-color: #FFFFFF;

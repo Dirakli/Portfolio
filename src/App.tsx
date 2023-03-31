@@ -8,54 +8,58 @@ import twitter from "/assets/twitter.svg"
 import linkedin from "/assets/linkedin.svg"
 import About from "./components/About"
 import Stack from "./components/Stack"
+import Projects from "./components/Projects"
+import Contact from "./components/Contact"
 
 function App() {
 
   return (
     <Router>
-    <WholeScreen className="App">
-      <GlobalStyles />
-      <HeaderWrapper>
-        <Link to="/"><Img src={IconTagMain} /></Link>
-        <Navigation>
-          <UnorderedList>
-            <List>
-              <Link to="/">Home</Link>
-            </List>
-            <List>
-              <Link to="/about">About</Link>
-            </List>
-            <List>
-              <Link to="/stack">Tech Stack</Link>
-            </List>
-            <List>
-              <Link to="/projects">Projects</Link>
-            </List>
-            <List>
-              <Link to="/contact">Contact</Link>
-            </List>
-          </UnorderedList>
-        </Navigation>
-        <ImgUL>
-          <li>
+      <WholeScreen className="App">
+        <GlobalStyles />
+        <HeaderWrapper>
+          <Link to="/"><Img src={IconTagMain} /></Link>
+          <Navigation>
+            <UnorderedList>
+              <List>
+                <Link to="/">Home</Link>
+              </List>
+              <List>
+                <Link to="/about">About</Link>
+              </List>
+              <List>
+                <Link to="/stack">Tech Stack</Link>
+              </List>
+              <List>
+                <Link to="/projects">Projects</Link>
+              </List>
+              <List>
+                <Link to="/contact">Contact</Link>
+              </List>
+            </UnorderedList>
+          </Navigation>
+          <ImgUL>
+            <li>
 
-            <a href="https://github.com/Dirakli" target="_blank" ><img src={github} alt="github icon" /></a>
-          </li>
-          <li>
-            <a href="https://twitter.com/i/flow/login" target="_blank" ><img src={twitter} alt="twitter icon" /></a>
+              <a href="https://github.com/Dirakli" target="_blank" ><img src={github} alt="github icon" /></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/i/flow/login" target="_blank" ><img src={twitter} alt="twitter icon" /></a>
 
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/irakli-dgebuadze-128789122/" target="_blank" ><img src={linkedin} alt="linkedin icon" /></a>
-          </li>
-        </ImgUL>
-      </HeaderWrapper>
-    </WholeScreen>
-    <Routes>
-      <Route path="/" Component={Home} />
-      <Route path="/about" Component={About} />
-      <Route path="/stack" Component={Stack} />
-    </Routes>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/irakli-dgebuadze-128789122/" target="_blank" ><img src={linkedin} alt="linkedin icon" /></a>
+            </li>
+          </ImgUL>
+        </HeaderWrapper>
+      </WholeScreen>
+      <Routes>
+        <Route path="/" Component={Home} />
+        <Route path="/about" Component={About} />
+        <Route path="/stack" Component={Stack} />
+        <Route path="/projects" Component={Projects} />
+        <Route path="/contact" Component={Contact} />
+      </Routes>
     </Router>
   )
 }
