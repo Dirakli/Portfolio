@@ -16,7 +16,7 @@ function Contact() {
 
 const Screen = styled.div`
   width: 100%;
-  padding-top: 230px;
+  padding-top: 130px;
   height: 100vh;
   background-color: ${(props) => props.color};
   @media (max-width: 1200px) {
