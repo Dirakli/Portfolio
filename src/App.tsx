@@ -5,42 +5,57 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import IconTagMain from "/assets/Tag-Icon.svg"
 import github from "/assets/github.svg"
 import twitter from "/assets/twitter.svg"
+import moon from "/assets/moon.png"
+import sun from "/assets/sun.png"
 import linkedin from "/assets/linkedin.svg"
 import About from "./components/About"
 import Stack from "./components/Stack"
 import Projects from "./components/Projects"
 import Contact from "./components/Contact"
+import { updateFunction } from "./store/handleChange"
+import { useDispatch, useSelector } from "react-redux/es/exports"
+import Main from "./components/Main"
 
 function App() {
+  const dispatch = useDispatch();
+  const changer = useSelector((item: any) => item.name.value)
+
+  function handler() {
+    console.log(changer)
+    return (
+      dispatch(updateFunction(!changer))
+    )
+  }
 
   return (
     <Router>
-      <WholeScreen className="App">
+      <WholeScreen color={changer ? "#191919" : "transparent"} className="App">
         <GlobalStyles />
-        <HeaderWrapper>
+        <HeaderWrapper color={changer ? "#191919" : "white"} >
           <Link to="/"><Img src={IconTagMain} /></Link>
           <Navigation>
             <UnorderedList>
-              <List>
-                <Link to="/">Home</Link>
-              </List>
-              <List>
-                <Link to="/about">About</Link>
-              </List>
-              <List>
-                <Link to="/stack">Tech Stack</Link>
-              </List>
-              <List>
-                <Link to="/projects">Projects</Link>
-              </List>
-              <List>
-                <Link to="/contact">Contact</Link>
-              </List>
+              <Link to="/main">
+                <List color={changer ? "#A7A7A7" : "#666666"} > Home
+                </List>
+              </Link>
+              <Link to="/about">
+                <List color={changer ? "#A7A7A7" : "#666666"} >About</List>
+              </Link>
+              <Link to="/stack">
+                <List color={changer ? "#A7A7A7" : "#666666"} >Tech Stack</List>
+              </Link>
+              <Link to="/projects">
+                <List color={changer ? "#A7A7A7" : "#666666"} >Projects</List>
+              </Link>
+              <Link to="/contact">
+                <List color={changer ? "#A7A7A7" : "#666666"} >Contact</List>
+              </Link>
+
             </UnorderedList>
           </Navigation>
           <ImgUL>
             <li>
-
               <a href="https://github.com/Dirakli" target="_blank" ><img src={github} alt="github icon" /></a>
             </li>
             <li>
@@ -51,10 +66,12 @@ function App() {
               <a href="https://www.linkedin.com/in/irakli-dgebuadze-128789122/" target="_blank" ><img src={linkedin} alt="linkedin icon" /></a>
             </li>
           </ImgUL>
+          <img style={{width: "56px", cursor: "pointer"}} onClick={handler} src={ changer ? sun : moon} />
         </HeaderWrapper>
       </WholeScreen>
       <Routes>
         <Route path="/" Component={Home} />
+        <Route path="/main" Component={Main} />
         <Route path="/about" Component={About} />
         <Route path="/stack" Component={Stack} />
         <Route path="/projects" Component={Projects} />
@@ -63,6 +80,7 @@ function App() {
     </Router>
   )
 }
+
 const ImgUL = styled.ul`
   width: 130px;
   display: flex;
@@ -75,7 +93,7 @@ const List = styled.li`
   font-weight: 500;
   font-size: 20px;
   line-height: 26px;
-  color: #666666;
+  color: ${(props) => props.color};
   align-items: Center;
 `
 
@@ -97,19 +115,22 @@ const Img = styled.img`
 
 const HeaderWrapper = styled.div`
   width: 1123.45px;
-  height: 59px;
+  height: 89px;
   display: flex;
+  position: fixed;
   align-items: center;
+  border-radius: 0 0 10px 10px;
   justify-content: space-between;
+  background-color: ${props => props.color};
 `
 
 const WholeScreen = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  padding-top: 30px;
   flex-direction: column;
   align-items: center;
+  background-color: ${(props) => props.color};
   margin: 0 auto;
 `
 

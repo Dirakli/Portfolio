@@ -9,17 +9,21 @@ import react from "/assets/stack/react.png"
 import vscode from "/assets/stack/vscode.png"
 import sass from "/assets/stack/sass.png"
 import linkedin from "/assets/stack/linkedin.png"
+import { useDispatch, useSelector } from "react-redux/es/exports"
 
 
 function Stack() {
+  const changer = useSelector((item: any) => item.name.value)
+
   return (
-    <Wrapper>
-      <StackHeading>My Tech Stack</StackHeading>
-      <StackText> Technologies I have been working with recently</StackText>
+    <Screen color={ !changer ? "#FFFFFF" : "#191919"}>
+    <Wrapper color={ !changer ? "#FFFFFF" : "#191919"}>
+      <StackHeading color={ !changer ? "#42446E" : "#D9D9D9"}  >My Tech Stack</StackHeading>
+      <StackText color={ !changer ? "#42446E" : "#A7A7A7 "}> Technologies I have been working with recently</StackText>
       <Images>
         <a href="https://www.w3schools.com/html/" target="_blank" ><img src={html} alt="html" /></a>
         <a href="https://www.w3schools.com/css/" target="_blank"><img src={css} alt="css" /></a>
-        <a href="https://www.javascript.com/" target="_blank"><img src={js} alt="js" /></a>
+        <a href="https://www.javascript.com/" target="_blank"><img src={js} style={{borderRadius: "10px", width: "95px"}} alt="js" /></a>
         <a href="https://react.dev/" target="_blank"><img src={react} alt="react" /></a>
         <a href="https://code.visualstudio.com/" target="_blank"><img src={vscode} alt="vscode" /></a>
         <a href="https://sass-lang.com/" target="_blank"><img src={sass} alt="sass" /></a>
@@ -29,8 +33,17 @@ function Stack() {
         <a href="https://www.linkedin.com/in/irakli-dgebuadze-128789122/" target="_blank"><img style={{ width: "95px" }} src={linkedin} alt="linkedin" /></a>
       </Images>
     </Wrapper>
+    </Screen>
+
   )
 }
+
+const Screen = styled.div`
+  width: 100%;
+  height: 100vh;
+  padding-top: 130px;
+  background-color: ${(props) => props.color};
+`
 
 const Images = styled.div`
   margin-top: 120px;
@@ -42,7 +55,7 @@ const Images = styled.div`
 const StackText = styled.span`
   font-weight: 400;
   font-family: 'Poppins', sans-serif;
-  color: 400;
+  color: ${(props) => props.color};
   font-size: 20px;
   line-height: 26px;
   margin-top: 28px;
@@ -52,7 +65,7 @@ const StackText = styled.span`
 const StackHeading = styled.h1`
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
-  color: #42446E;
+  color: ${(props) => props.color};
   font-size: 42px;
   line-height: 26px;
   align-items: center 
@@ -62,7 +75,8 @@ const Wrapper = styled.div`
   width: 1123.45px;
   height: 525px;
   display: flex;
-  margin: 100px auto;
+  margin: 0 auto;
+  background-color: ${(props) => props.color};
   flex-direction: column;
   align-items: flex-start;
 `

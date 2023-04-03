@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import profilePhoto from "/assets/profilePhoto.png"
-import { Routes, Route, Link } from "react-router-dom"
-import About from "./About"
+import { useSelector } from "react-redux/es/exports"
 
 function Home() {
+  const changer = useSelector((item: any) => item.name.value)
+
   return (
-    <WholeScreen>
+    <WholeScreen color={changer ? "#191919" : "transparent"} >
       <NameandPicture>
-        <DescriptionMyself>Hello 👋 <NameSurname>I'm Irakli Dgebuadze</NameSurname> a front-end developer focused on building engaging and responsive websites.
+        <DescriptionMyself color={changer ? "#D9D9D9" : " #42446E"} >Hello 👋 <NameSurname>I'm Irakli Dgebuadze</NameSurname> a front-end developer focused on building engaging and responsive websites.
         </DescriptionMyself>
         <ProfileImage src={profilePhoto} alt="profile image" />
       </NameandPicture>
@@ -49,7 +50,7 @@ const DescriptionMyself = styled.h1`
   font-family: 'Poppins', sans-serif;  
   font-weight: 700;
   font-style: normal;
-  color: #42446E;
+  color: ${(props) => props.color};
   font-size: 40px;
   line-height: 70px;
   letter-spacing: -1;
@@ -58,7 +59,7 @@ const DescriptionMyself = styled.h1`
 const NameandPicture = styled.div`
   width: 1123.45px;;
   height: 350px;
-  margin-top: 120px;
+  margin-top: 150px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,7 +69,7 @@ const WholeScreen = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  background-color: #FFFFFF;
+  background-color: ${(props) => props.color};
   flex-direction: column;
   align-items: center;
   margin: 0 auto;

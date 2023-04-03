@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import UniversityImage from "/assets/Vector.svg"
-
+import { useDispatch, useSelector } from "react-redux/es/exports"
 
 function About() {
+  const changer = useSelector((item: any) => item.name.value)
   return (
-    <MainWrapper>
-      <AboutText>About Me</AboutText>
-      <Paragraph>As a motivated and detail-oriented front-end developer with over a year of experience in programming, web design, and development, I am proficient in HTML, CSS, and JavaScript, with experience in ReactJS and other front-end frameworks. I have a strong focus on user experience and problem-solving, and I am skilled in web design principles and best practices, as well as responsive design and cross-browser compatibility. With excellent communication and collaboration skills, I am a collaborative team player who is eager to contribute to innovative and dynamic projects.</Paragraph>
-      <Education>Education</Education>
+    <Screen color={ !changer ? "#FFFFFF" : "#191919"}>
+    <MainWrapper color={ !changer ? "#FFFFFF" : "#191919"}>
+      <AboutText color={ !changer ? "#42446E" : "#D9D9D9"} >About Me</AboutText>
+      <Paragraph  color={ !changer ? "#42446E" : "#CCCCCC"}>As a motivated and detail-oriented front-end developer with over a year of experience in programming, web design, and development, I am proficient in HTML, CSS, and JavaScript, with experience in ReactJS and other front-end frameworks. I have a strong focus on user experience and problem-solving, and I am skilled in web design principles and best practices, as well as responsive design and cross-browser compatibility. With excellent communication and collaboration skills, I am a collaborative team player who is eager to contribute to innovative and dynamic projects.</Paragraph>
+      <Education color={ !changer ? "#42446E" : "#D9D9D9"}>Education</Education>
       <EducationWrapper>
         <MiniWrapper>
           <University>Bachelor in Faculty of Economics and Business</University>
@@ -45,8 +47,15 @@ function About() {
         <Line></Line>
       </EducationWrapper>
     </MainWrapper>
+    </Screen>
   )
 }
+
+const Screen = styled.div`
+  width: 100%;
+  padding-top: 130px;
+  background-color: ${(props) => props.color};
+`
 
 const Line = styled.div`
   width: 100%;
@@ -117,7 +126,7 @@ const Education = styled.h1`
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   font-style: normal;
-  color: #42446E;
+  color: ${(props) => props.color};
   font-size: 42px;
   line-height: 52px;
   margin-top: 38px;
@@ -129,7 +138,7 @@ const Paragraph = styled.p`
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   line-height: 26px;
-  color: 18px;
+  color: ${(props) => props.color};
   margin-top: 38px;
 `
 
@@ -137,10 +146,9 @@ const AboutText = styled.h1`
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   font-style: normal;
-  color: #42446E;
+  color: ${(props) => props.color};
   font-size: 42px;
   line-height: 52px;
-  color: #42446E;
   letter-spacing: -0.4px;
 `
 
@@ -148,10 +156,10 @@ const MainWrapper = styled.div`
   width: 1123.45px;
   height: 100vh;
   display: flex;
-  background-color: #FFFFFF;
+  background-color: ${(props) => props.color};
   flex-direction: column;
   align-items: flex-start;
-  margin: 100px auto;
+  margin: 0 auto;
 `
 
 export default About;
