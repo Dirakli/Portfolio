@@ -83,13 +83,10 @@ function App() {
           </HeaderMiniWrapper>
         </HeaderWrapper>
         
-        
-
-
       </WholeScreen>
       <Routes>
-        <Route path="/" Component={Home} />
-        <Route path="/main" Component={Main} />
+        <Route path="/" Component={Main} />
+        <Route path="/main" Component={Home} />
         <Route path="/about" Component={About} />
         <Route path="/stack" Component={Stack} />
         <Route path="/projects" Component={Projects} />

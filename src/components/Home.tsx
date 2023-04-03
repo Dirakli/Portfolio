@@ -87,7 +87,7 @@ const NameandPicture = styled.div`
   @media (max-width: 1200px) {
     flex-direction: column;
     width: initial;
-    margin-top: 100px;
+    margin-top: 150px;
   }
 `
 
