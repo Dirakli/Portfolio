@@ -4,15 +4,15 @@ import { useSelector } from "react-redux/es/exports"
 function Contact() {
   const changer = useSelector((item: any) => item.name.value)
 
-    return (
-      <Screen color={changer ? "#191919" : "transparent"} >
-        <Wrapper>
-            <Text color={ changer ? "#CCCCCC" : "#1E0E62"} >For any questions please mail us:</Text>
-            <Gmail href="mailto:dgebuadzeirakli28@gmail.com">dgebuadzeirakli28@gmail.com</Gmail>
-        </Wrapper>
-      </Screen>
-    )
-} 
+  return (
+    <Screen color={changer ? "#191919" : "transparent"} >
+      <Wrapper>
+        <Text color={changer ? "#CCCCCC" : "#1E0E62"} >For any questions please mail us:</Text>
+        <Gmail href="mailto:dgebuadzeirakli28@gmail.com">dgebuadzeirakli28@gmail.com</Gmail>
+      </Wrapper>
+    </Screen>
+  )
+}
 
 const Screen = styled.div`
   width: 100%;
@@ -20,7 +20,7 @@ const Screen = styled.div`
   height: 100vh;
   background-color: ${(props) => props.color};
   @media (max-width: 1200px) {
-    padding-top: 130px;
+    padding-top: 80px;
   }
 `
 
@@ -45,7 +45,7 @@ text-fill-color: transparent;
   }
 `
 
-const Text =  styled.p`
+const Text = styled.p`
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   color: ${(props) => props.color};
