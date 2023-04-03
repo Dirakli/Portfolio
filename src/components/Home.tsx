@@ -37,12 +37,24 @@ const NameSurname = styled.h1<any>`
       background-position: 400%;
     }
   }
+    @media (max-width: 1200px) {
+    width: 300px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    letter-spacing: 0.25;
+  }
 `
 
 const ProfileImage = styled.img`
   border-radius: 50%;
   padding: 9px;
   background: linear-gradient(90deg, #13B0F5 -2.06%, #E70FAA 100%);
+
+  @media (max-width: 1200px) {
+    width: 70%;
+    margin-top: 50px;
+  }
 `
 
 const DescriptionMyself = styled.h1`
@@ -54,15 +66,29 @@ const DescriptionMyself = styled.h1`
   font-size: 40px;
   line-height: 70px;
   letter-spacing: -1;
+
+  @media (max-width: 1200px) {
+    width: 350px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.25;
+  }
 `
 
 const NameandPicture = styled.div`
-  width: 1123.45px;;
+  width: 1123.45px;
   height: 350px;
   margin-top: 150px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    width: initial;
+    margin-top: 100px;
+  }
 `
 
 const WholeScreen = styled.div`

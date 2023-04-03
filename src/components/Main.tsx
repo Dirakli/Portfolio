@@ -325,11 +325,24 @@ const NameSurname = styled.h1<any>`
       background-position: 400%;
     }
   }
+
+    @media (max-width: 1200px) {
+    width: 300px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    letter-spacing: 0.25;
+  }
 `
 const ProfileImage = styled.img`
   border-radius: 50%;
   padding: 9px;
   background: linear-gradient(90deg, #13B0F5 -2.06%, #E70FAA 100%);
+
+  @media (max-width: 1200px) {
+    width: 70%;
+    margin-top: 50px;
+  }
 `
 
 const DescriptionMyself = styled.h1`
@@ -341,6 +354,14 @@ const DescriptionMyself = styled.h1`
   font-size: 40px;
   line-height: 70px;
   letter-spacing: -1;
+
+  @media (max-width: 1200px) {
+    width: 350px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.25;
+  }  
 `
 
 const NameandPicture = styled.div`
@@ -349,6 +370,12 @@ const NameandPicture = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    width: initial;
+    margin-top: 100px;
+  }  
 `
 
 const WholeScreen = styled.div`
@@ -363,6 +390,10 @@ const Div = styled.div`
   width: 100%;
   padding-top: 130px;
   background-color: ${(props) => props.color};
+
+  @media (max-width: 1200) {
+    padding-top: 90px;
+  }
 `
 
 const ProjectWrapper = styled.div`
@@ -370,6 +401,9 @@ const ProjectWrapper = styled.div`
   grid-template-columns: 370px 370px 370px;
   gap: 25px;
 
+  @media (max-width: 1200px) {
+  grid-template-columns: 100%;
+  } 
 `
 
 const Span = styled.a`
@@ -456,7 +490,14 @@ const ProjectText = styled.span`
   font-size: 20px;
   line-height: 26px;
   margin-top: 28px;
-  align-items: center;   
+  align-items: center; 
+  
+    @media (max-width: 1200px) {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 15px;
+    margin-left: -176px;
+  }
 `
 
 const ProjectHeading = styled.h1`
@@ -466,6 +507,13 @@ const ProjectHeading = styled.h1`
   font-size: 42px;
   line-height: 26px;
   align-items: center;
+
+    @media (max-width: 1200px) {
+    font-weight: 500px;
+    font-size: 28px;
+    line-height: 20px;
+    margin-left: -230px;
+  }
 `
 const WrapperM = styled.div`
   width: 100%;
@@ -484,6 +532,10 @@ const Screen = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.color};
+
+  @media (max-width: 1200px) {
+    padding-top: 80px;
+  }
 `
 
 const Images = styled.div`
@@ -491,6 +543,12 @@ const Images = styled.div`
   display: grid;
   grid-template-columns: 150px 150px 150px 150px 150px 150px 150px;
   grid-gap: 20px;
+
+  @media (max-width: 1200px) {
+    margin-top: 70px;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 20px;
+  }
 `
 
 const StackText = styled.span`
@@ -500,7 +558,13 @@ const StackText = styled.span`
   font-size: 20px;
   line-height: 26px;
   margin-top: 28px;
-  align-items: center   
+  align-items: center; 
+  
+  @media (max-width: 1200px) {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 15px;
+  }
 `
 
 const StackHeading = styled.h1`
@@ -509,7 +573,13 @@ const StackHeading = styled.h1`
   color: ${(props) => props.color};
   font-size: 42px;
   line-height: 26px;
-  align-items: center 
+  align-items: center; 
+
+  @media (max-width: 1200px) {
+    font-weight: 500px;
+    font-size: 28px;
+    line-height: 20px;
+  }
 `
 
 const Wrapper = styled.div`
@@ -520,6 +590,11 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.color};
   flex-direction: column;
   align-items: flex-start;
+
+  @media (max-width: 1200px) {
+    width: initial;
+    align-items: center;
+  }
 `
 
 const WrapperS = styled.div`
@@ -528,6 +603,10 @@ const WrapperS = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+
+  @media (max-width: 1200px) {
+    width: 350px;
+  } 
 `
 
 export default Main;

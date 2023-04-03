@@ -278,6 +278,10 @@ const ProjectWrapper = styled.div`
   grid-template-columns: 370px 370px 370px;
   gap: 25px;
 
+    @media (max-width: 1200px) {
+  grid-template-columns: 100%;
+  } 
+
 `
 
 const Span = styled.a`
@@ -365,6 +369,13 @@ const ProjectText = styled.span`
   line-height: 26px;
   margin-top: 28px;
   align-items: center;   
+
+      @media (max-width: 1200px) {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 15px;
+    margin-left: -176px;
+  }
 `
 
 const ProjectHeading = styled.h1`
@@ -374,6 +385,13 @@ const ProjectHeading = styled.h1`
   font-size: 42px;
   line-height: 26px;
   align-items: center;
+
+  @media (max-width: 1200px) {
+    font-weight: 500px;
+    font-size: 28px;
+    line-height: 20px;
+    margin-left: -230px;
+  }
 `
 const Wrapper = styled.div`
   width: 1123.45px;
@@ -383,6 +401,11 @@ const Wrapper = styled.div`
   margin: 0 auto;
   flex-direction: column;
   align-items: flex-start;
+
+    @media (max-width: 1200px) {
+    width: initial;
+    align-items: center;
+  }
 `
 
 

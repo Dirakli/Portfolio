@@ -40,7 +40,7 @@ function Stack() {
 
 const Screen = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   padding-top: 130px;
   background-color: ${(props) => props.color};
 `
@@ -50,6 +50,12 @@ const Images = styled.div`
   display: grid;
   grid-template-columns: 150px 150px 150px 150px 150px 150px 150px;
   grid-gap: 20px;
+
+    @media (max-width: 1200px) {
+    margin-top: 70px;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 20px;
+  }
 `
 
 const StackText = styled.span`
@@ -59,7 +65,13 @@ const StackText = styled.span`
   font-size: 20px;
   line-height: 26px;
   margin-top: 28px;
-  align-items: center   
+  align-items: center;
+
+    @media (max-width: 1200px) {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 15px;
+  }
 `
 
 const StackHeading = styled.h1`
@@ -68,17 +80,27 @@ const StackHeading = styled.h1`
   color: ${(props) => props.color};
   font-size: 42px;
   line-height: 26px;
-  align-items: center 
+  align-items: center;
+
+    @media (max-width: 1200px) {
+    font-weight: 500px;
+    font-size: 28px;
+    line-height: 20px;
+  }
 `
 
 const Wrapper = styled.div`
   width: 1123.45px;
-  height: 525px;
+  height: 100vh;
   display: flex;
   margin: 0 auto;
   background-color: ${(props) => props.color};
   flex-direction: column;
   align-items: flex-start;
+
+    @media (max-width: 1200px) {
+    width: 350px;
+  } 
 `
 
 export default Stack;
